@@ -18,6 +18,9 @@
   .hover-bg-primaryOrange:hover {
     background-color: var(--primaryOrange);
   }
+  .mt-12 {
+    margin-top: 3rem;
+  }
 }
 
 @layer components {
@@ -28,6 +31,8 @@
     gap: 1rem;
     padding: 2rem;
     align-items: center;
+    justify-content: center;
+    margin-top: 50px;
   }
 
   .header-title {
@@ -80,7 +85,6 @@
   .dropdown:focus,
   .input:focus {
     outline: 0;
-    ring-color: var(--primaryBlue);
     border-color: var(--primaryBlue);
   }
 
