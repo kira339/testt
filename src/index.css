@@ -1,3 +1,113 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primaryGray: #f3f4f6;
+  --primaryBlack: #000000;
+  --primaryWhite: #ffffff;
+  --lightGray: #d1d5db;
+  --primaryBlue: #3b82f6;
+  --primaryOrange: #f97316;
+  --primaryGreen: #10b981;
+  --primaryDarkGray: #4b5563;
+  --primaryGrayLight: #9ca3af;
+}
+
+@layer utilities {
+  .hover-bg-primaryOrange:hover {
+    background-color: var(--primaryOrange);
+  }
+}
+
+@layer components {
+  .header-container {
+    background-color: var(--primaryGray);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    align-items: center;
+  }
+
+  .header-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    width: 100%;
+    text-align: center;
+    color: var(--primaryBlack);
+  }
+
+  .form-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    background-color: var(--primaryWhite);
+  }
+
+  .dropdown-container,
+  .input-container,
+  .button-container {
+    margin-top: 1rem;
+    margin-bottom: 0; /* Remove the margin-bottom for medium and larger screens */
+  }
+
+  .dropdown,
+  .input {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    color: var(--primaryBlack);
+    background-color: var(--primaryWhite);
+    border: 1px solid var(--lightGray);
+    border-radius: 0.25rem;
+    transition-property: border-color, background-color;
+    transition-duration: 150ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    appearance: none;
+  }
+
+  .dropdown:hover,
+  .input:hover {
+    border-color: var(--primaryBlue);
+  }
+
+  .dropdown:focus,
+  .input:focus {
+    outline: 0;
+    ring-color: var(--primaryBlue);
+    border-color: var(--primaryBlue);
+  }
+
+  .dropdown.dark,
+  .input.dark {
+    background-color: var(--lightGray);
+    border-color: var(--primaryDarkGray);
+    color: var(--primaryWhite);
+  }
+
+  .button {
+    background-color: var(--primaryBlue);
+    color: var(--primaryWhite);
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .button:hover {
+    background-color: var(--primaryOrange);
+  }
+
+  .svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.25rem;
+  }
+}
