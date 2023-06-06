@@ -1,33 +1,25 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import "../index.css";
+import { HistoryFilterContext } from "../utils//HistoryFilterContext";
 
 export default function HistoryHeader() {
-  const [selectedCategory, setSelectedCategory] = useState("All categories");
-  const [searchQuery, setSearchQuery] = useState("");
-  const [recordCount, setRecordCount] = useState(0);
-  const [startDate, setStartDate] = useState(new Date());
+  const { filters, setFilters } = useContext(HistoryContext);
 
   const handleSearch = (e) => {
     e.preventDefault();
-    if (!startDate || !searchQuery) {
+    if (!filters.date || !filters.search) {
       alert("Please select a date and enter a search query.");
       return;
     }
-    const query = {
-      category: selectedCategory,
-      date: startDate,
-      search: searchQuery,
-    };
-    console.log(query);
+    console.log(filters);
     // Do something with the query...
   };
 
   return (
     <div className="header-container">
       <h2 className="header-title">
-        Search Query: {searchQuery}, Number of Records: {recordCount}
+        Search Query: {filters.search}, Number of Records: {filters.recordCount}
       </h2>
 
       <form className="form-container" onSubmit={handleSearch}>
@@ -36,8 +28,10 @@ export default function HistoryHeader() {
           <select
             id="category-dropdown"
             className="dropdown"
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
+            value={filters.category}
+            onChange={(e) =>
+              setFilters({ ...filters, category: e.target.value })
+            }
           >
             <option value="account_DD">Account</option>
             <option value="contact_DD">Contact</option>
@@ -53,9 +47,9 @@ export default function HistoryHeader() {
             type="search"
             id="search-input"
             className="input"
-            placeholder={`Search ${selectedCategory}`}
+            placeholder={`Search ${filters.category}`}
             required
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={(e) => setFilters({ ...filters, search: e.target.value })}
           />
         </div>
 
@@ -84,8 +78,8 @@ export default function HistoryHeader() {
         {/* Date picker */}
         <div className="input-container">
           <DatePicker
-            selected={startDate}
-            onChange={(date) => setStartDate(date)}
+            selected={filters.date}
+            onChange={(date) => setFilters({ ...filters, date })}
             className="input"
           />
         </div>
