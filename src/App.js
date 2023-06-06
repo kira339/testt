@@ -16,18 +16,18 @@ function App() {
   });
 
   return (
-    <div className="flex mainC">
-      <Navbar />
-      <Routes>
-        <HistoryFilterContext.Provider value={{ filters, setFilters }}>
+    <HistoryFilterContext.Provider value={{ filters, setFilters }}>
+      <div className="flex mainC">
+        <Navbar />
+        <Routes>
           <Route path="/" element={<History />}></Route>
           <Route path="/History" element={<History />}></Route>
-        </HistoryFilterContext.Provider>
-        <Route path="/Enrollment" element={<Enrollment />}></Route>
-        <Route path="/Reports" element={<Reports />}></Route>
-        <Route path="/Perference" element={<Perference />}></Route>
-      </Routes>
-    </div>
+          <Route path="/Enrollment" element={<Enrollment />}></Route>
+          <Route path="/Reports" element={<Reports />}></Route>
+          <Route path="/Perference" element={<Perference />}></Route>
+        </Routes>
+      </div>
+    </HistoryFilterContext.Provider>
   );
 }
 

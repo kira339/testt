@@ -43,34 +43,20 @@ export default function HistoryDashboard({ filters }) {
   });
 
   return (
-    <div className="flex-1 p-4 flex items-center justify-center bg-primaryGray">
-      <div className="bg-primaryWhite shadow-md rounded-lg p-6 w-full">
-        <h2 className="text-2xl font-bold mb-4 text-primaryBlack"> Report</h2>
-        <div className="overflow-x-auto">
-          <table className="table-auto w-full">
+    <div className="dashboard-container">
+      <div className="dashboard-content">
+        <h2 className="dashboard-title"> Report</h2>
+        <div className="table-container">
+          <table className="table">
             <thead>
-              <tr>
-                <th className="bg-lightGray p-2 text-primaryBlack">
-                  Accountio
-                </th>
-                <th className="bg-lightGray p-2 text-primaryBlack">
-                  Contactly
-                </th>
-                <th className="bg-lightGray p-2 text-primaryBlack">
-                  Alpha Tango
-                </th>
-                <th className="bg-lightGray p-2 text-primaryBlack">
-                  Delivero Metho
-                </th>
-                <th className="bg-lightGray p-2 text-primaryBlack">
-                  Dateo/Timi
-                </th>
-                <th className="bg-lightGray p-2 text-primaryBlack">
-                  Delv Staty
-                </th>
-                <th className="bg-lightGray p-2 text-primaryBlack">
-                  Act MesGne
-                </th>
+              <tr className="table-header">
+                <th className="table-header-cell">Accountio</th>
+                <th className="table-header-cell">Contactly</th>
+                <th className="table-header-cell">Alpha Tango</th>
+                <th className="table-header-cell">Delivero Method</th>
+                <th className="table-header-cell">Dateo/Timei</th>
+                <th className="table-header-cell">Delv Staty</th>
+                <th className="table-header-cell">Act Mesgne</th>
               </tr>
             </thead>
             <tbody>
