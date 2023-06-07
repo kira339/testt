@@ -1,66 +1,25 @@
 module.exports = {
-  mode: "jit",
-  purge: [
-    "./src/**/*.js",
-    "./src/**/*.jsx",
-    "./src/**/*.ts",
-    "./src/**/*.tsx",
-    "./public/index.html",
-  ],
-  darkMode: false,
+  purge: {
+    content: ["./src/**/*.{js,jsx,ts,tsx}"],
+    options: {
+      safelist: ["hover:bg-primaryOrange"],
+    },
+  },
+  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
-        primaryGray: "#F3F4F6",
-        primaryBlack: "#111827",
-        primaryWhite: "#FFFFFF",
-        primaryBlue: "#3B82F6",
-        lightGray: "#D1D1DB",
-        primaryOrange: "#F97316",
-        primaryGrayLight: "#D3DCE6",
-      },
-      borderRadius: {
-        "2xl": "2rem",
-      },
-      spacing: {
-        128: "32rem",
-        144: "36rem",
+        primaryOrange: "#FA8300",
+        lightGray: "#E0E0E0",
+        gray: "#5C5C5C",
+        black: "#000000",
+        blue: "#2B49F5",
+        dashboardBackground: "#F4D6A1",
       },
     },
   },
-  variants: {},
-  plugins: [],
-};
-module.exports = {
-  mode: "jit",
-  purge: [
-    "./src/**/*.js",
-    "./src/**/*.jsx",
-    "./src/**/*.ts",
-    "./src/**/*.tsx",
-    "./public/index.html",
-  ],
-  darkMode: false,
-  theme: {
-    extend: {
-      colors: {
-        primaryGray: "#F3F4F6",
-        primaryBlack: "#111827",
-        primaryWhite: "#FFFFFF",
-        primaryBlue: "#3B82F6",
-        lightGray: "#D1D1DB",
-        primaryOrange: "#F97316",
-        primaryGrayLight: "#D3DCE6",
-      },
-      borderRadius: {
-        "2xl": "2rem",
-      },
-      spacing: {
-        128: "32rem",
-        144: "36rem",
-      },
-    },
+  variants: {
+    extend: {},
   },
-  variants: {},
   plugins: [],
 };

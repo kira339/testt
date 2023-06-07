@@ -6,6 +6,7 @@ import History from "./pages/History/History";
 import Enrollment from "./pages/Enrollment/Enrollment";
 import Reports from "./pages/Reports/Reports";
 import Perference from "./pages/Perference/Perference";
+import "./index.css";
 
 function App() {
   const [filters, setFilters] = useState({
@@ -17,14 +18,14 @@ function App() {
 
   return (
     <HistoryFilterContext.Provider value={{ filters, setFilters }}>
-      <div className="flex mainC">
+      <div className="App">
         <Navbar />
         <Routes>
           <Route path="/" element={<History />} />
-          <Route path="/History" element={<History />} />
-          <Route path="/Enrollment" element={<Enrollment />} />
-          <Route path="/Reports" element={<Reports />} />
-          <Route path="/Perference" element={<Perference />} />
+          <Route path="/history" element={<History />} />
+          <Route path="/enrollment" element={<Enrollment />} />
+          <Route path="/reports" element={<Reports />} />
+          <Route path="/perference" element={<Perference />} />
         </Routes>
       </div>
     </HistoryFilterContext.Provider>
