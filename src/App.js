@@ -20,11 +20,11 @@ function App() {
       <div className="flex mainC">
         <Navbar />
         <Routes>
-          <Route path="/" element={<History />}></Route>
-          <Route path="/History" element={<History />}></Route>
-          <Route path="/Enrollment" element={<Enrollment />}></Route>
-          <Route path="/Reports" element={<Reports />}></Route>
-          <Route path="/Perference" element={<Perference />}></Route>
+          <Route path="/" element={<History />} />
+          <Route path="/History" element={<History />} />
+          <Route path="/Enrollment" element={<Enrollment />} />
+          <Route path="/Reports" element={<Reports />} />
+          <Route path="/Perference" element={<Perference />} />
         </Routes>
       </div>
     </HistoryFilterContext.Provider>

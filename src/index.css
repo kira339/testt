@@ -3,15 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --primaryGray: #f3f4f6;
-  --primaryBlack: #111827;
-  --primaryWhite: #ffffff;
-  --lightGray: #d1d5db;
-  --primaryBlue: #3b82f6;
-  --primaryOrange: #f97316;
-  --primaryGreen: #10b981;
-  --primaryDarkGray: #4b5563;
-  --primaryGrayLight: #d3dce6;
+  --primaryOrange: #fa8300; /* Orange */
+  --lightGray: #e0e0e0; /* Light Gray */
+  --primaryGray: #5c5c5c; /* Gray */
+  --primaryBlack: #000000; /* Black */
+  --primaryBlue: #2b49f5; /* Blue */
 }
 
 @layer utilities {
@@ -24,52 +20,14 @@
 }
 
 @layer components {
-  .header-container {
-    background-color: var(--primaryGray);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 2rem;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-  }
-
-  .header-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 0.25rem;
-    width: 100%;
-    text-align: center;
-    color: var(--primaryBlack);
-  }
-
-  .form-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    width: 100%;
-    background-color: var(--primaryWhite);
-  }
-
-  .dropdown-container,
-  .input-container,
-  .button-container {
-    margin-top: 1rem;
-    margin-bottom: 0; /* Remove the margin-bottom for medium and larger screens */
-  }
-
-  .dropdown,
   .input {
     display: block;
     width: 100%;
     padding: 0.5rem 1rem;
     font-size: 0.875rem;
     color: var(--primaryBlack);
-    background-color: var(--primaryWhite);
-    border: 1px solid var(--lightGray);
+    background-color: var(--lightGray);
+    border: 1px solid var(--primaryGray);
     border-radius: 0.25rem;
     transition-property: border-color, background-color;
     transition-duration: 150ms;
@@ -77,27 +35,24 @@
     appearance: none;
   }
 
-  .dropdown:hover,
   .input:hover {
     border-color: var(--primaryBlue);
   }
 
-  .dropdown:focus,
   .input:focus {
     outline: 0;
     border-color: var(--primaryBlue);
   }
 
-  .dropdown.dark,
   .input.dark {
-    background-color: var(--lightGray);
-    border-color: var(--primaryDarkGray);
-    color: var(--primaryWhite);
+    background-color: var(--primaryGray);
+    border-color: var(--primaryBlack);
+    color: var(--lightGray);
   }
 
   .button {
     background-color: var(--primaryBlue);
-    color: var(--primaryWhite);
+    color: var(--lightGray);
     font-weight: bold;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
@@ -113,136 +68,5 @@
     width: 1.25rem;
     height: 1.25rem;
     margin-right: 0.25rem;
-  }
-
-  .table-row {
-    border-top: 1px solid var(--lightGray);
-  }
-
-  .table-cell {
-    padding: 0.5rem;
-    color: var(--primaryGrayLight);
-  }
-
-  .dashboard-container {
-    flex: 1;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--primaryGray);
-  }
-
-  .dashboard-content {
-    background-color: var(--primaryWhite);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-    width: 100%;
-  }
-
-  .dashboard-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--primaryBlack);
-  }
-
-  .table-container {
-    overflow-x: auto;
-  }
-
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .table-header {
-    background-color: var(--lightGray);
-  }
-
-  .table-header-cell {
-    padding: 0.5rem;
-    color: var(--primaryBlack);
-  }
-  .nav-container {
-    display: flex;
-  }
-
-  .nav-content {
-    background-color: var(--primaryBlue);
-    height: 100vh;
-    padding: 2rem;
-    position: relative;
-    transition-duration: 300ms;
-  }
-
-  .nav-toggle {
-    position: absolute;
-    right: -1rem;
-    top: 1rem;
-    width: 1.75rem;
-    cursor: pointer;
-  }
-
-  .nav-header {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-  }
-
-  .nav-logo {
-    cursor: pointer;
-    transition-duration: 500ms;
-  }
-
-  .nav-title {
-    color: var(--primaryWhite);
-    font-size: 1.25rem;
-    font-weight: 500;
-    transition-duration: 200ms;
-  }
-
-  .nav-title-hidden {
-    transform: scale(0);
-  }
-
-  .nav-list {
-    padding-top: 1.5rem;
-  }
-
-  .nav-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    transition-duration: 200ms;
-  }
-
-  .nav-item-active {
-    background-color: var(--primaryDarkGray);
-  }
-
-  .nav-link {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    color: var(--primaryGrayLight);
-    text-decoration: none;
-  }
-
-  .nav-icon {
-    width: 1.25rem;
-    height: 1.25rem;
-  }
-
-  .nav-text {
-    transition-duration: 200ms;
-  }
-
-  .nav-text-hidden {
-    display: none;
   }
 }
