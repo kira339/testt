@@ -1,6 +1,6 @@
 import React from "react";
-import HistoryTable from "./HistoryTable";
-import { tableData } from "../DB/historyData"; // Import your data
+import HistoryTable from "../Table/HistoryTable";
+import { tableData } from "../../DB/historyData"; // Import your data
 
 export default function HistoryDashboard({ filters }) {
   const filteredData = tableData.filter((data) => {
