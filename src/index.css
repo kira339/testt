@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --primaryGray: #f3f4f6;
+  --primaryGray: #6e6e80;
   --primaryBlack: #111827;
   --primaryWhite: #ffffff;
   --lightGray: #d1d5db;
@@ -12,6 +12,7 @@
   --primaryGreen: #10b981;
   --primaryDarkGray: #4b5563;
   --primaryGrayLight: #d3dce6;
+  --secondarywhite: #f3f4f6;
 }
 
 @layer utilities {
@@ -25,7 +26,7 @@
 
 @layer components {
   .header-container {
-    background-color: var(--primaryGray);
+    background-color: var(--secondarywhite);
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -114,7 +115,7 @@
     height: 1.25rem;
     margin-right: 0.25rem;
   }
-
+  /* table */
   .table-row {
     border-top: 1px solid var(--lightGray);
   }
@@ -130,7 +131,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--primaryGray);
+    background-color: var(--secondarywhite);
   }
 
   .dashboard-content {
@@ -165,16 +166,23 @@
     padding: 0.5rem;
     color: var(--primaryBlack);
   }
+  /* Nav */
   .nav-container {
-    display: flex;
+    transition: width 0.3s; /* Add a transition for the width change */
+  }
+
+  .nav-container.open {
+    width: 25.5rem; /* Adjust the width of the navbar when it's open */
   }
 
   .nav-content {
-    background-color: var(--primaryBlue);
+    background-color: #6e6e80; /* Change the color of the navbar to gray */
     height: 100vh;
     padding: 2rem;
     position: relative;
     transition-duration: 300ms;
+    color: var(--primaryBlack); /* Make the text color black */
+    border-right: 1px solid var(--primaryOrange); /* Add a vertical orange line on the right */
   }
 
   .nav-toggle {
@@ -197,7 +205,7 @@
   }
 
   .nav-title {
-    color: var(--primaryWhite);
+    color: var(--primaryBlack);
     font-size: 1.25rem;
     font-weight: 500;
     transition-duration: 200ms;
@@ -219,30 +227,43 @@
     border-radius: 0.25rem;
     cursor: pointer;
     transition-duration: 200ms;
+    margin-bottom: 1rem; /* Add spacing between nav items */
   }
 
   .nav-item-active {
-    background-color: var(--primaryDarkGray);
+    background-color: var(--primaryOrange);
+    color: var(--primaryBlack);
   }
 
   .nav-link {
     display: flex;
     align-items: center;
     gap: 1rem;
-    color: var(--primaryGrayLight);
+    color: var(--primaryBlack);
     text-decoration: none;
   }
 
   .nav-icon {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    transition: all 0.3s; /* Add a transition for the size change */
   }
 
   .nav-text {
+    font-size: 1.25rem;
     transition-duration: 200ms;
   }
 
   .nav-text-hidden {
     display: none;
+  }
+
+  .nav-container.open .nav-icon {
+    width: 2.25rem; /* Increase the size of the icons when the navbar is open */
+    height: 2.25rem;
+  }
+
+  .nav-container.open .nav-text {
+    font-size: 1.5rem; /* Increase the size of the text when the navbar is open */
   }
 }

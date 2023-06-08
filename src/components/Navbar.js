@@ -15,9 +15,10 @@ const navItems = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(true);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="nav-container">
+    <div className={`nav-container ${open ? "open" : ""}`}>
       <div className="nav-content">
         <img src={Menu} className="nav-toggle" onClick={() => setOpen(!open)} />
         <div className="nav-header">
@@ -30,7 +31,10 @@ export default function Navbar() {
           {navItems.map((item, index) => (
             <li
               key={index}
-              className={`nav-item ${index === 0 && "nav-item-active"}`}
+              className={`nav-item ${
+                index === activeIndex && "nav-item-active"
+              }`}
+              onClick={() => setActiveIndex(index)}
             >
               <Link to={item.title} className="nav-link">
                 <img src={item.src} className="nav-icon" />
