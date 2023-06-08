@@ -1,7 +1,7 @@
-// src/components/Header/HistoryHeader.js
 import React, { useContext } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+
 import { HistoryFilterContext } from "../utils/HistoryFilterContext";
 import Banner from "./Banner";
 
@@ -25,8 +25,18 @@ export default function HistoryHeader() {
         Search Query: {filters.search}, Number of Records: {filters.recordCount}
       </h2>
       <form className="form-container" onSubmit={handleSearch}>
-        {/* Category dropdown */}
-        <div className="dropdown-container">
+        <div className="search-container">
+          {/* Search input */}
+          <input
+            type="search"
+            id="search-input"
+            className="input"
+            placeholder={`Search ${filters.category}`}
+            required
+            onChange={(e) => setFilters({ ...filters, search: e.target.value })}
+          />
+
+          {/* Category dropdown */}
           <select
             id="category-dropdown"
             className="dropdown"
@@ -41,22 +51,8 @@ export default function HistoryHeader() {
             <option value="deliveryMethod_DD">Delivery Method</option>
             <option value="deliveryStatus_DD">Delivery Status</option>
           </select>
-        </div>
 
-        {/* Search input */}
-        <div className="input-container">
-          <input
-            type="search"
-            id="search-input"
-            className="input"
-            placeholder={`Search ${filters.category}`}
-            required
-            onChange={(e) => setFilters({ ...filters, search: e.target.value })}
-          />
-        </div>
-
-        {/* Search button */}
-        <div className="button-container">
+          {/* Search button */}
           <button type="submit" className="button">
             <svg
               aria-hidden="true"
