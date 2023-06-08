@@ -1,6 +1,6 @@
 import React from "react";
-import HistoryTable from "../Table/HistoryTable";
-import { tableData } from "../../DB/historyData"; // Import your data
+import HistoryTable from "./HistoryTable";
+import { tableData } from "../DB/historyData"; // Import your data
 
 export default function HistoryDashboard({ filters }) {
   const filteredData = tableData.filter((data) => {
@@ -50,12 +50,12 @@ export default function HistoryDashboard({ filters }) {
           <table className="table">
             <thead>
               <tr className="table-header">
-                <th className="table-header-cell">Accounting</th>
+                <th className="table-header-cell">Accountio</th>
                 <th className="table-header-cell">Contactly</th>
                 <th className="table-header-cell">Alpha Tango</th>
                 <th className="table-header-cell">Delivero Method</th>
                 <th className="table-header-cell">Dateo/Timei</th>
-                <th className="table-header-cell">Delvi Staty</th>
+                <th className="table-header-cell">Delv Staty</th>
                 <th className="table-header-cell">Act Mesgne</th>
               </tr>
             </thead>
