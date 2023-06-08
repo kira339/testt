@@ -1,7 +1,9 @@
+// src/components/Header/HistoryHeader.js
 import React, { useContext } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { HistoryFilterContext } from "../utils/HistoryFilterContext";
+import Banner from "./Banner";
 
 export default function HistoryHeader() {
   const { filters, setFilters } = useContext(HistoryFilterContext);
@@ -18,10 +20,10 @@ export default function HistoryHeader() {
 
   return (
     <div className="header-container">
+      <Banner pageName="History" />
       <h2 className="header-title">
         Search Query: {filters.search}, Number of Records: {filters.recordCount}
       </h2>
-
       <form className="form-container" onSubmit={handleSearch}>
         {/* Category dropdown */}
         <div className="dropdown-container">
@@ -68,7 +70,7 @@ export default function HistoryHeader() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 00 7 7a7 7 0 007-7z"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
               ></path>
             </svg>
             <span className="sr-only">Search</span>

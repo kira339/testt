@@ -4,6 +4,7 @@ import Enroll from "../assets/enroll.png";
 import History from "../assets/history.png";
 import Perference from "../assets/perference.png";
 import Report from "../assets/report.png";
+import Menu from "../assets/menu.svg";
 
 const navItems = [
   { title: "History", src: History },
@@ -18,11 +19,7 @@ export default function Navbar() {
   return (
     <div className="nav-container">
       <div className="nav-content">
-        <img
-          src={Enroll}
-          className="nav-toggle"
-          onClick={() => setOpen(!open)}
-        />
+        <img src={Menu} className="nav-toggle" onClick={() => setOpen(!open)} />
         <div className="nav-header">
           <img src="" className="nav-logo" />
           <h1 className={`nav-title ${!open && "nav-title-hidden"}`}>
