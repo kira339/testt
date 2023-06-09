@@ -1,5 +1,17 @@
+// pages/Enrollment.jsx
 import React from "react";
+import EnrollmentHeader from "../components/EnrollmentHeader";
+import EnrollmentDashboard from "../components/EnrollmentDashboard";
+import EnrollmentTable from "../components/EnrollmentTable";
 
-export default function Enrollment() {
-  return <div>Enrollment</div>;
+function Enrollment() {
+  return (
+    <div className="enrollment">
+      <EnrollmentHeader />
+      <EnrollmentDashboard />
+      <EnrollmentTable />
+    </div>
+  );
 }
+
+export default Enrollment;
