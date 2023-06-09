@@ -6,7 +6,7 @@ export default function History() {
   const [filters, setFilters] = useState({});
 
   return (
-    <div className="history ">
+    <div className="history">
       <HistoryHeader onSearch={setFilters} />
       <HistoryDashboard filters={filters} />
     </div>

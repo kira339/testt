@@ -25,6 +25,14 @@
 }
 
 @layer components {
+  .history {
+    /* display center of screen in respect to the body */
+
+    /* Style your main content here */
+    width: 80%; /* This makes the main content take up 80% of the body's width */
+    padding: 2%;
+    padding-left: 4%;
+  }
   .header-container {
     background-color: var(--secondarywhite);
     display: flex;
@@ -319,19 +327,4 @@
   .search-input {
     border: 1px solid black !important;
   }
-  /* .dropdown-button {
-    border-right: 1px solid var(--primaryBlack);
-    padding: 0.5rem 1rem;
-  } */
-
-  /* .search-input {
-    flex-grow: 1;
-    border: none;
-    padding: 0.5rem 1rem;
-  } */
-  /* 
-  .search-button {
-    border-left: 1px solid var(--primaryBlack);
-    padding: 0.5rem 1rem;
-  } */
 }
