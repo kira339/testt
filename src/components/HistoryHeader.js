@@ -21,9 +21,7 @@ export default function HistoryHeader() {
   return (
     <div className="header-container">
       <Banner pageName="History" />
-      <h2 className="header-title">
-        Search Query: {filters.search}, Number of Records: {filters.recordCount}
-      </h2>
+
       <form className="form-container" onSubmit={handleSearch}>
         <div className="search-container">
           {/* Search input */}
@@ -89,6 +87,9 @@ export default function HistoryHeader() {
           </button>
         </div>
       </form>
+      <h2 className="header-title">
+        Search Query: {filters.search}, Number of Records: {filters.recordCount}
+      </h2>
     </div>
   );
 }
