@@ -3,7 +3,7 @@ import React from "react";
 
 function EnrollmentDashboard() {
   return (
-    <div className="dashboard-container">
+    <div className="enrollment-dashboard">
       <h2>Hello World</h2>
     </div>
   );

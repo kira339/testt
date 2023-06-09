@@ -1,22 +1,15 @@
-// components/EnrollmentHeader.js
 import React from "react";
-import Banner from "./Banner";
 
-function EnrollmentHeader() {
+function EnrollmentHeader({ searchInput, setSearchInput, handleSearch }) {
   return (
-    <div className="header-container">
-      <Banner pageName="Enrollments" />
-      <form className="form-container">
-        <input
-          type="search"
-          id="search-input"
-          className="input"
-          placeholder="Search Enrollments"
-        />
-        <button type="submit" className="button">
-          Search
-        </button>
-      </form>
+    <div className="enrollment-header">
+      <h1>Enrollments</h1>
+      <input
+        type="text"
+        value={searchInput}
+        onChange={(e) => setSearchInput(e.target.value)}
+      />
+      <button onClick={handleSearch}>Search</button>
     </div>
   );
 }
