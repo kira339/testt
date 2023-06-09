@@ -41,7 +41,7 @@
     display: flex;
     align-items: center;
     gap: 0.2rem;
-    width: 70%; /* Adjust this to change the width of the search field and dropdown */
+    flex-basis: 77%; /* Adjust this to change the width of the search field and dropdown */
     border: 2px solid var(--primaryBlack);
     border-radius: 0.25rem;
   }
@@ -63,6 +63,9 @@
     background-color: var(--primaryWhite);
     padding: 1rem;
   }
+  .datepicker-input {
+    border: 1px solid black !important;
+  }
 
   .input-container {
     width: 80%; /* Adjust this to change the width of the search field within the search-container */
@@ -80,7 +83,7 @@
   .input {
     width: 100%;
     padding: 1rem;
-    border: none; /* Remove the border from the input and dropdown */
+    /* border: none;  */
   }
 
   .dropdown:hover,

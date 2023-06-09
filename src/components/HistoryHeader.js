@@ -28,7 +28,7 @@ export default function HistoryHeader() {
           <input
             type="search"
             id="search-input"
-            className="input"
+            className="input search-input" // Add the new class here
             placeholder={`Search ${filters.category}`}
             required
             onChange={(e) => setFilters({ ...filters, search: e.target.value })}
@@ -72,11 +72,11 @@ export default function HistoryHeader() {
         </div>
 
         {/* Date picker */}
-        <div className="input-container">
+        <div>
           <DatePicker
             selected={filters.date}
             onChange={(date) => setFilters({ ...filters, date })}
-            className="input"
+            className="datepicker-input" // Add the new class here
           />
         </div>
 
