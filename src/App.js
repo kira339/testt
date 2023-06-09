@@ -17,7 +17,7 @@ function App() {
 
   return (
     <HistoryFilterContext.Provider value={{ filters, setFilters }}>
-      <div className="flex mainC">
+      <div className="flex">
         <Navbar />
         <Routes>
           <Route path="/" element={<History />}></Route>

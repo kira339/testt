@@ -16,12 +16,12 @@
 }
 
 @layer utilities {
-  .hover-bg-primaryOrange:hover {
+  /* .hover-bg-primaryOrange:hover {
     background-color: var(--primaryOrange);
-  }
-  .mt-12 {
+  } */
+  /* .mt-12 {
     margin-top: 3rem;
-  }
+  } */
 }
 
 @layer components {
@@ -74,37 +74,38 @@
     width: 20%; /* Adjust this to change the width of the dropdown within the search-container */
   }
 
-  .button-container {
-    margin-top: 1rem;
-    margin-bottom: 0; /* Remove the margin-bottom for medium and larger screens */
+  .dropdown {
+    width: 20%;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: var(--lightGray);
+    color: var(--primaryBlack);
+    cursor: pointer;
   }
-
-  .dropdown,
   .input {
     width: 100%;
     padding: 1rem;
     /* border: none;  */
   }
 
-  .dropdown:hover,
+  /* .dropdown:hover,
   .input:hover {
-    border-color: var(--primaryBlue);
-  }
+    border-color: var(--primaryOrange);
+  } */
 
-  .dropdown:focus,
+  /* .dropdown:focus,
   .input:focus {
     outline: 0;
-    border-color: var(
-      --primaryOrange
-    ); /* Make the border orange when the input is focused */
-  }
+    border-color: var(--primaryOrange);
+  } */
 
-  .dropdown.dark,
+  /* .dropdown.dark,
   .input.dark {
     background-color: var(--lightGray);
     border-color: var(--primaryDarkGray);
     color: var(--primaryWhite);
-  }
+  } */
 
   .button {
     background-color: var(--primaryBlue);
@@ -180,7 +181,7 @@
 
   .table-cell {
     padding: 0.5rem;
-    color: var(--primaryGrayLight);
+    color: var(--primaryBlack);
   }
 
   .dashboard-container {
@@ -329,19 +330,19 @@
     gap: 0.2rem;
     width: 50%;
   }
-  .dropdown-button {
+  /* .dropdown-button {
     border-right: 1px solid var(--primaryBlack);
     padding: 0.5rem 1rem;
-  }
+  } */
 
-  .search-input {
+  /* .search-input {
     flex-grow: 1;
     border: none;
     padding: 0.5rem 1rem;
-  }
-
+  } */
+  /* 
   .search-button {
     border-left: 1px solid var(--primaryBlack);
     padding: 0.5rem 1rem;
-  }
+  } */
 }
