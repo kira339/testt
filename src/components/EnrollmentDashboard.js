@@ -1,10 +1,15 @@
-// components/EnrollmentDashboard.js
 import React from "react";
+import EnrollmentTable from "./EnrollmentTable";
 
-function EnrollmentDashboard() {
+function EnrollmentDashboard({ data }) {
   return (
-    <div className="enrollment-dashboard">
-      <h2>Hello World</h2>
+    <div className="dashboard-container">
+      <div className="dashboard-content">
+        <h1 className="dashboard-title">Enrollment Dashboard</h1>
+        <div className="table-container">
+          <EnrollmentTable data={data} />
+        </div>
+      </div>
     </div>
   );
 }

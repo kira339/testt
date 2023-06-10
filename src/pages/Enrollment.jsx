@@ -22,8 +22,7 @@ function Enrollment() {
         setSearchInput={setSearchInput}
         handleSearch={handleSearch}
       />
-      <EnrollmentDashboard />
-      <EnrollmentTable data={filteredData} />
+      <EnrollmentDashboard data={filteredData} />
     </div>
   );
 }
