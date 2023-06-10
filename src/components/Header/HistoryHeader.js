@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
-import { HistoryFilterContext } from "../utils/HistoryFilterContext";
-import Banner from "./Banner";
+// import { HistoryFilterContext } from contexts/HistoryFilterContext";
+import { HistoryFilterContext } from "../../utils/HistoryFilterContext";
+// IMPORT Banner
+import Banner from "../Banner/Banner";
 
 export default function HistoryHeader() {
   const { filters, setFilters } = useContext(HistoryFilterContext);

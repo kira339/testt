@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Enroll from "../assets/enroll.png";
-import History from "../assets/history.png";
-import Perference from "../assets/perference.png";
-import Report from "../assets/report.png";
-import Menu from "../assets/menu.svg";
+import Enroll from "../../assets/enroll.png";
+import History from "../../assets/history.png";
+import Perference from "../../assets/perference.png";
+import Report from "../../assets/report.png";
+import Menu from "../../assets/menu.svg";
 
 const navItems = [
   { title: "History", src: History },

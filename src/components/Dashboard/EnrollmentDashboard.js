@@ -1,5 +1,6 @@
 import React from "react";
-import EnrollmentTable from "./EnrollmentTable";
+// IMPORT EnrollmentTable
+import EnrollmentTable from "../Table/EnrollmentTable";
 
 function EnrollmentDashboard({ data }) {
   return (

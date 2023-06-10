@@ -1,7 +1,8 @@
 import React from "react";
-import HistoryTable from "./HistoryTable";
-import { tableData } from "../DB/historyData"; // Import your data
-
+// fix IMPORT HistoryTable
+import HistoryTable from "../Table/HistoryTable";
+// import { tableData } src\DB\historyData.js
+import tableData from "../../DB/tableData";
 export default function HistoryDashboard({ filters }) {
   const filteredData = tableData.filter((data) => {
     // Filter by account

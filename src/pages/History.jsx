@@ -1,7 +1,10 @@
 // pages/History.jsx
 import React, { useState, useEffect } from "react";
-import HistoryHeader from "../components/HistoryHeader";
-import HistoryDashboard from "../components/HistoryDashboard";
+// import HistoryHeader from "../components/HistoryHeader";
+// import HistoryDashboard from "../components/HistoryDashboard";
+// import { fetchHistory } from "../utils/API";
+import HistoryHeader from "../components/Header/HistoryHeader";
+import HistoryDashboard from "../components/Dashboard/HistoryDashboard";
 import { fetchHistory } from "../utils/API";
 
 export default function History() {
