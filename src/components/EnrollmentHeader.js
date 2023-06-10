@@ -1,34 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 
-const EnrollmentHeader = ({ onSearch }) => {
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
-
-  const handleSearchSubmit = (event) => {
-    event.preventDefault();
-    onSearch(searchTerm);
-  };
-
+function EnrollmentHeader({ searchInput, setSearchInput, handleSearch }) {
   return (
     <div className="enrollment-header">
-      <h1>Enrollments</h1>
-      <form onSubmit={handleSearchSubmit}>
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={handleSearchChange}
-          placeholder="Search..."
-          className="search-input"
-        />
-        <button type="submit" className="button">
-          Search
-        </button>
-      </form>
+      <h1 className="header-title">Enrollment</h1>
+      <div className="form-container">
+        <div className="search-container">
+          <input
+            type="text"
+            className="input"
+            placeholder="Search..."
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
+          />
+          <button className="button" onClick={handleSearch}>
+            Search
+          </button>
+        </div>
+      </div>
     </div>
   );
-};
+}
 
 export default EnrollmentHeader;

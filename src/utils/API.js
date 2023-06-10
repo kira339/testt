@@ -17,3 +17,18 @@ export function fetchHistory(filters) {
     });
   }
 }
+
+export function fetchEnrollment(filters) {
+  if (ENABLE_FETCHING) {
+    return axios.get("http://your-backend-url/api/enrollment", {
+      params: filters,
+    });
+  } else {
+    // Return a promise that resolves with mock data
+    return Promise.resolve({
+      data: {
+        // Your mock data here
+      },
+    });
+  }
+}
