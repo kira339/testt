@@ -1,10 +1,9 @@
 import React from "react";
 // fix IMPORT HistoryTable
 import HistoryTable from "../Table/HistoryTable";
-// import { tableData } src\DB\historyData.js
-import tableData from "../../DB/tableData";
+import { HistoryData } from "../../DB/HistoryData";
 export default function HistoryDashboard({ filters }) {
-  const filteredData = tableData.filter((data) => {
+  const filteredData = HistoryData.filter((data) => {
     // Filter by account
     if (filters.category === "account_DD" && data.account !== filters.search) {
       return false;

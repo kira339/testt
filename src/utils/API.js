@@ -5,7 +5,7 @@ const ENABLE_FETCHING = false; // Set this to true to enable fetching
 
 export function fetchHistory(filters) {
   if (ENABLE_FETCHING) {
-    return axios.get("http://your-backend-url/api/history", {
+    return axios.get("http://backend-url/api/history", {
       params: filters,
     });
   } else {
@@ -20,7 +20,22 @@ export function fetchHistory(filters) {
 
 export function fetchEnrollment(filters) {
   if (ENABLE_FETCHING) {
-    return axios.get("http://your-backend-url/api/enrollment", {
+    return axios.get("http://backend-url/api/enrollment", {
+      params: filters,
+    });
+  } else {
+    // Return a promise that resolves with mock data
+    return Promise.resolve({
+      data: {
+        // Your mock data here
+      },
+    });
+  }
+}
+
+export function fetchReports(filters) {
+  if (ENABLE_FETCHING) {
+    return axios.get("http://backend-url/api/Reports", {
       params: filters,
     });
   } else {

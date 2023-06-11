@@ -1,4 +1,4 @@
-export const tableData = [
+export const HistoryData = [
   {
     account: "007244485801",
     contact: "50000000",
