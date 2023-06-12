@@ -385,67 +385,89 @@
     color: var(--primaryBlack);
   }
 
-
   /* Cards */
 
-.card {
-  border-radius: 0.25rem;
-  border: 1px solid #e5e7eb;
-  background-color: #ffffff;
-  padding: 1.5rem 1.875rem;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-}
-.card-large {
-  /* add styles for large cards */
-  border-radius: 0.5rem;
-  border: 1px solid #e5e7eb;
-  background-color: #ffffff;
-  padding: 1.5rem 1.875rem;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-}
+  .card {
+    border-radius: 0.25rem;
+    border: 1px solid #e5e7eb;
+    background-color: #ffffff;
+    padding: 1.5rem 1.875rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+  .card-large {
+    /* add styles for large cards */
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+    background-color: #ffffff;
+    padding: 1.5rem 1.875rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
 
-.card-small {
-  /* additional styles for small cards */
+  .card-small {
+    /* additional styles for small cards */
+  }
+  .card-icon {
+    display: flex;
+    height: 2.875rem;
+    width: 2.875rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #f3f4f6;
+  }
 
+  .card-content {
+    margin-top: 1rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
 
-}
-.card-icon {
-  display: flex;
-  height: 2.875rem;
-  width: 2.875rem;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background-color: #f3f4f6;
-}
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1f2937;
+  }
 
-.card-content {
-  margin-top: 1rem;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-}
+  .card-subtitle {
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
 
-.card-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #1f2937;
-}
+  .card-percentage {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #64748b;
+  }
 
-.card-subtitle {
-  font-size: 0.875rem;
-  font-weight: 500;
-}
+  .reports {
+    width: 80%;
+    padding: 2%;
+    padding-left: 4%;
+    margin-top: 50px;
+  }
 
-.card-percentage {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: #64748b;
-}
+  .reports-header {
+    background-color: var(--secondarywhite);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+  }
 
-
-  
+  .reports-dashboard {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondarywhite);
+  }
 }
