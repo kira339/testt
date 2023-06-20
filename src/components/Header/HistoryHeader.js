@@ -7,14 +7,14 @@ import { HistoryFilterContext } from "../../utils/HistoryFilterContext";
 import Banner from "../Banner/Banner";
 
 export default function HistoryHeader() {
-  const { filters, setFilters } = useContext(HistoryFilterContext);
+  const { filters, updateFilter } = useContext(HistoryFilterContext);
 
   const handleSearch = (e) => {
     e.preventDefault();
-    if (!filters.date || !filters.search) {
-      alert("Please select a date and enter a search query.");
-      return;
-    }
+    // if (!filters.date || !filters.search) {
+    //   alert("Please select a date and enter a search query.");
+    //   return;
+    // }
     console.log(filters);
     // Do something with the query...
   };
@@ -32,7 +32,9 @@ export default function HistoryHeader() {
             className="input" // Add the new class here
             placeholder={`Search ${filters.category}`}
             required
-            onChange={(e) => setFilters({ ...filters, search: e.target.value })}
+            onChange={(e) =>
+              updateFilter({ ...filters, search: e.target.value })
+            }
           />
 
           {/* Category dropdown */}
@@ -41,7 +43,7 @@ export default function HistoryHeader() {
             className="dropdown"
             value={filters.category}
             onChange={(e) =>
-              setFilters({ ...filters, category: e.target.value })
+              updateFilter({ ...filters, category: e.target.value })
             }
           >
             <option value="account_DD">Account</option>
@@ -52,7 +54,11 @@ export default function HistoryHeader() {
           </select>
 
           {/* Search button */}
-          <button type="submit" className="button">
+          <button
+            type="submit"
+            className="button"
+            onChange={(filters) => console.log(filters)}
+          >
             Search
           </button>
         </div>
@@ -61,8 +67,10 @@ export default function HistoryHeader() {
         <div>
           <DatePicker
             selected={filters.date}
-            onChange={(date) => setFilters({ ...filters, date })}
-            className="datepicker-input" // Add the new class here
+            onChange={(date) => updateFilter({ ...filters, date })}
+            className="datepicker-input"
+
+            // Add the new class here
           />
         </div>
 
