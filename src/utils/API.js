@@ -1,15 +1,12 @@
-// utils/api.js
+// utils/API.js
 import axios from "axios";
 
-const ENABLE_FETCHING = false; // Set this to true to enable fetching
+const ENABLE_FETCHING = false;
 
 export function fetchHistory(filters) {
   if (ENABLE_FETCHING) {
-    return axios.get("http://backend-url/api/history", {
-      params: filters,
-    });
+    return axios.get("/api/history", { params: filters });
   } else {
-    // Return a promise that resolves with mock data
     return Promise.resolve({
       data: {
         // Your mock data here
@@ -20,11 +17,8 @@ export function fetchHistory(filters) {
 
 export function fetchEnrollment(filters) {
   if (ENABLE_FETCHING) {
-    return axios.get("http://backend-url/api/enrollment", {
-      params: filters,
-    });
+    return axios.get("/api/enrollment", { params: filters });
   } else {
-    // Return a promise that resolves with mock data
     return Promise.resolve({
       data: {
         // Your mock data here
@@ -35,11 +29,32 @@ export function fetchEnrollment(filters) {
 
 export function fetchReports(filters) {
   if (ENABLE_FETCHING) {
-    return axios.get("http://backend-url/api/Reports", {
-      params: filters,
-    });
+    return axios.get("/api/Reports", { params: filters });
   } else {
-    // Return a promise that resolves with mock data
+    return Promise.resolve({
+      data: {
+        // Your mock data here
+      },
+    });
+  }
+}
+
+export function updatePreference(title, isToggled) {
+  if (ENABLE_FETCHING) {
+    return axios.put(`/api/preferences/${title}`, { isToggled });
+  } else {
+    return Promise.resolve({
+      data: {
+        // Your mock data here
+      },
+    });
+  }
+}
+
+export function fetchPreferences(accountNumber) {
+  if (ENABLE_FETCHING) {
+    return axios.get(`/api/preferences/${accountNumber}`);
+  } else {
     return Promise.resolve({
       data: {
         // Your mock data here
