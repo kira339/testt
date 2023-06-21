@@ -1,7 +1,7 @@
 import React from "react";
-// fix IMPORT HistoryTable
 import HistoryTable from "../Table/HistoryTable";
 import { HistoryData } from "../../DB/HistoryData";
+
 export default function HistoryDashboard({ filters }) {
   const filteredData = HistoryData.filter((data) => {
     // Filter by account
@@ -50,13 +50,13 @@ export default function HistoryDashboard({ filters }) {
           <table className="table">
             <thead>
               <tr className="table-header">
-                <th className="table-header-cell">Accountio</th>
-                <th className="table-header-cell">Contactly</th>
-                <th className="table-header-cell">Alpha Tango</th>
-                <th className="table-header-cell">Delivero Method</th>
-                <th className="table-header-cell">Dateo/Timei</th>
-                <th className="table-header-cell">Delv Staty</th>
-                <th className="table-header-cell">Act Mesgne</th>
+                <th className="table-header-cell">Account</th>
+                <th className="table-header-cell">Contact</th>
+                <th className="table-header-cell">Alert Type</th>
+                <th className="table-header-cell">Delivery Method</th>
+                <th className="table-header-cell">Date/Time</th>
+                <th className="table-header-cell">Delivery Status</th>
+                <th className="table-header-cell">Message</th>
               </tr>
             </thead>
             <tbody>

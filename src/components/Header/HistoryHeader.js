@@ -66,10 +66,13 @@ export default function HistoryHeader() {
         {/* Date picker */}
         <div>
           <DatePicker
+            // selected={filters.date}
+            // onChange={(date) => updateFilter({ ...filters, date })}
+            // className="datepicker-input"
             selected={filters.date}
             onChange={(date) => updateFilter({ ...filters, date })}
             className="datepicker-input"
-
+            // shouldCloseOnSelect={false}
             // Add the new class here
           />
         </div>

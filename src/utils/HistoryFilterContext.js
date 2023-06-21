@@ -22,10 +22,13 @@ export const HistoryFilterProvider = ({ children }) => {
     // setFilters: () => {},
   });
 
-  const updateFilter = (filter) => {
-    // console.log(emailInput);
-    setFilters({ filter });
-  };
+  // const updateFilter = (filter) => {
+  //   // console.log(emailInput);
+  //   setFilters({ filter });
+  // };
+  function updateFilter(newFilters) {
+    setFilters((prevFilters) => ({ ...prevFilters, ...newFilters }));
+  }
 
   return (
     <HistoryFilterContext.Provider value={{ filters, updateFilter }}>
