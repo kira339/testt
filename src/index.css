@@ -15,25 +15,20 @@
   --secondarywhite: #f3f4f6;
 }
 
-@layer utilities {
-  /* .hover-bg-primaryOrange:hover {
-    background-color: var(--primaryOrange);
-  } */
-  /* .mt-12 {
-    margin-top: 3rem;
-  } */
-}
-
 @layer components {
-  .history {
-    /* display center of screen in respect to the body */
-
-    /* Style your main content here */
-    width: 80%; /* This makes the main content take up 80% of the body's width */
+  .history,
+  .enrollment,
+  .reports,
+  .perference {
+    width: 80%;
     padding: 2%;
     padding-left: 4%;
+    margin-top: 50px;
   }
-  .header-container {
+
+  .header-container,
+  .enrollment-header,
+  .reports-header {
     background-color: var(--secondarywhite);
     display: flex;
     flex-direction: column;
@@ -41,18 +36,17 @@
     padding: 2rem;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
-    width: 100%; /* Make the container take up the full width */
-    padding: 1rem; /* Add padding to the container */
+    width: 100%;
+    padding: 1rem;
   }
+
   .search-container {
     display: flex;
     align-items: center;
     gap: 0.2rem;
-    flex-basis: 77%; /* Adjust this to change the width of the search field and dropdown */
-    border: 2px solid var(--primaryBlack);
-    border-radius: 0.25rem;
+    width: 50%;
   }
+
   .header-title {
     font-size: 1.5rem;
     font-weight: bold;
@@ -61,8 +55,10 @@
     text-align: center;
     color: var(--primaryBlack);
   }
-
-  .form-container {
+  .form-container,
+  .dashboard-container,
+  .enrollment-dashboard,
+  .reports-dashboard {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -71,31 +67,27 @@
     background-color: var(--primaryWhite);
     padding: 1rem;
   }
-  .datepicker-input {
-    border: 1px solid black !important;
-  }
 
-  .input-container {
-    width: 80%; /* Adjust this to change the width of the search field within the search-container */
-  }
+  .input-container,
   .dropdown-container {
-    width: 20%; /* Adjust this to change the width of the dropdown within the search-container */
+    width: 80%;
   }
 
   .dropdown {
     width: 20%;
     padding: 1rem;
-
     border-radius: 0.25rem;
     background-color: var(--lightGray);
     color: var(--primaryBlack);
     cursor: pointer;
   }
-  .input {
+
+  .input,
+  .search-input {
     width: 100%;
     padding: 1rem;
-    /* border: none;  */
   }
+
   .input:hover,
   .dropdown:hover {
     border: 1px solid var(--primaryOrange);
@@ -116,90 +108,71 @@
   .button:hover {
     background-color: var(--primaryOrange);
   }
-
-  .history-header {
-    background-color: var(--primaryGray);
-    color: var(--primaryWhite);
+  .dashboard-header {
+    background-color: #3b82f6; /* Adjust color as needed */
+    color: #ffffff; /* Adjust color as needed */
     padding: 1rem;
     border-radius: 0.5rem;
-    margin-bottom: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  .history-header-title {
-    font-size: 1.5rem;
-    font-weight: bold;
+  .dashboard-header img {
+    width: 30px; /* Adjust size as needed */
+    height: 30px;
   }
 
-  .history-header-subtitle {
-    font-size: 1rem;
-    color: var(--primaryWhite);
+  .dashboard-header select {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid #d1d5db; /* Adjust color as needed */
   }
 
-  .history-content {
-    background-color: var(--primaryWhite);
-    border-radius: 0.5rem;
+  .dashboard-header-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .dashboard-header-dropdown {
+    width: 50%;
+  }
+
+  .dashboard-alert {
+    margin: 1rem 0;
     padding: 1rem;
+    background-color: #f97316;
+    color: #ffffff;
+  }
+
+  .dashboard-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid var(--lightGray);
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .dashboard-item-info {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
   }
 
-  .history-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .history-item-title {
+  .dashboard-item-title {
     font-size: 1.25rem;
     font-weight: bold;
     color: var(--primaryBlack);
   }
 
-  .history-item-date {
+  .dashboard-item-description {
     font-size: 1rem;
     color: var(--primaryGray);
   }
 
-  .history-item-description {
-    font-size: 1rem;
-    color: var(--primaryBlack);
-  }
-  /* table */
-  .table-row {
-    border-top: 1px solid var(--lightGray);
-  }
-
-  .table-cell {
-    padding: 0.5rem;
-    color: var(--primaryBlack);
-  }
-
-  .dashboard-container {
-    flex: 1;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--secondarywhite);
-  }
-
-  .dashboard-content {
-    background-color: var(--primaryWhite);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-    width: 100%;
-  }
-
-  .dashboard-title {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    color: var(--primaryBlack);
+  .dashboard-item-toggle {
+    position: relative;
   }
 
   .table-container {
@@ -215,11 +188,69 @@
     background-color: var(--lightGray);
   }
 
-  .table-header-cell {
+  .table-header-cell,
+  .table-cell {
     padding: 0.5rem;
     color: var(--primaryBlack);
   }
-  /* Nav */
+
+  .table-row {
+    border-top: 1px solid var(--lightGray);
+  }
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+  }
+
+  input:checked + .slider {
+    background-color: #2196f3;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196f3;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
   .nav-container {
     transition: width 0.3s; /* Add a transition for the width change */
   }
@@ -295,6 +326,7 @@
     color: var(--primaryBlack);
     text-decoration: none;
   }
+
   .nav-icon {
     width: 1.75rem;
     height: 1.75rem;
@@ -318,74 +350,6 @@
   .nav-container.open .nav-text {
     font-size: 1.5rem; /* Increase the size of the text when the navbar is open */
   }
-  .search-container {
-    display: flex;
-    align-items: center;
-    gap: 0.2rem;
-    width: 50%;
-  }
-  .search-input {
-    border: 1px solid black !important;
-  }
-
-  /* Existing CSS */
-
-  /* ... */
-
-  /* Add new styles for the Enrollment page */
-
-  .enrollment {
-    width: 80%;
-    padding: 2%;
-    padding-left: 4%;
-    margin-top: 50px;
-  }
-
-  .enrollment-header {
-    background-color: var(--secondarywhite);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 2rem;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 1rem;
-  }
-
-  .enrollment-dashboard {
-    flex: 1;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--secondarywhite);
-  }
-
-  .enrollment-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .enrollment-table-header {
-    background-color: var(--lightGray);
-  }
-
-  .enrollment-table-header-cell {
-    padding: 0.5rem;
-    color: var(--primaryBlack);
-  }
-
-  .enrollment-table-row {
-    border-top: 1px solid var(--lightGray);
-  }
-
-  .enrollment-table-cell {
-    padding: 0.5rem;
-    color: var(--primaryBlack);
-  }
-
-  /* Cards */
 
   .card {
     border-radius: 0.25rem;
@@ -394,6 +358,7 @@
     padding: 1.5rem 1.875rem;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   }
+
   .card-large {
     /* add styles for large cards */
     border-radius: 0.5rem;
@@ -406,6 +371,7 @@
   .card-small {
     /* additional styles for small cards */
   }
+
   .card-icon {
     display: flex;
     height: 2.875rem;
@@ -449,6 +415,7 @@
     padding-left: 4%;
     margin-top: 50px;
   }
+
   .perference {
     width: 80%;
     padding: 2%;
@@ -456,7 +423,8 @@
     margin-top: 50px;
   }
 
-  .reports-header {
+  .reports-header,
+  .perference-header {
     background-color: var(--secondarywhite);
     display: flex;
     flex-direction: column;
@@ -468,7 +436,8 @@
     padding: 1rem;
   }
 
-  .reports-dashboard {
+  .reports-dashboard,
+  .perference-dashboard {
     flex: 1;
     padding: 1rem;
     display: flex;

@@ -27,12 +27,11 @@
 import React, { useState } from "react";
 import Banner from "../Banner/Banner";
 
-function PerferenceHeader({ onSearch }) {
+function PerferenceHeader({}) {
   const [accountNumber, setAccountNumber] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // onSearch(accountNumber);
     console.log("hello");
   };
 
@@ -53,6 +52,16 @@ function PerferenceHeader({ onSearch }) {
           Search
         </button>
       </form>
+      <div className="dashboard-header">
+        <img src="gear_icon.png" alt="Gear Icon" />{" "}
+        {/* Replace with actual gear icon */}
+        <select>
+          <option>Option 1</option> {/* Replace with actual options */}
+          <option>Option 2</option>
+        </select>
+        <img src="plus_icon.png" alt="Plus Icon" />{" "}
+        {/* Replace with actual plus icon */}
+      </div>
     </div>
   );
 }
