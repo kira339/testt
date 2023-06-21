@@ -67,6 +67,10 @@
     background-color: var(--primaryWhite);
     padding: 1rem;
   }
+  .dashboard-content {
+    width: 90%;
+    margin: auto; /* content is position to the center  block element */
+  }
 
   .input-container,
   .dropdown-container {
