@@ -4,7 +4,6 @@ import EnrollmentDashboard from "../components/Dashboard/EnrollmentDashboard";
 import { EnrollmentData } from "../DB/EnrollmentData";
 import { EnrollmentFilterProvider } from "../utils/EnrollmentFilterContext";
 import { fetchEnrollment } from "../utils/API";
-import Banner from "../components/Banner/Banner";
 
 function Enrollment() {
   const [searchInput, setSearchInput] = useState("");
@@ -26,8 +25,6 @@ function Enrollment() {
   return (
     <EnrollmentFilterProvider>
       <div className="enrollment">
-        <Banner pageName="enrollment" />
-
         <EnrollmentHeader
           searchInput={searchInput}
           setSearchInput={setSearchInput}

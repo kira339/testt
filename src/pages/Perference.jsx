@@ -17,21 +17,23 @@ import React from "react";
 import PerferenceHeader from "../components/Header/PerferenceHeader";
 import PerferenceDashboard from "../components/Dashboard/PerferenceDashboard";
 import DashboardHeader from "../components/Dashboard/DashboardHeader";
-import PerferenceItem from "../components/Item/PerferenceItem";
-import { PreferenceProvider } from "../utils/PreferenceContext";
+// import PerferenceItem from "../components/Item/PerferenceItem";
+import { PreferenceFilterProvider } from "../utils/PreferenceFilterContext";
 
 export default function Perference() {
   return (
-    <PreferenceProvider>
+    <PreferenceFilterProvider>
       <div className="perference">
         <PerferenceHeader />
         <PerferenceDashboard>
           <DashboardHeader />
-          <PerferenceItem />
-          <PerferenceItem />
-          <PerferenceItem />
         </PerferenceDashboard>
+        {/* <DashboardHeader />
+          <PerferenceItem />
+          <PerferenceItem />
+          <PerferenceItem /> */}
+        {/* </PerferenceDashboard> */}
       </div>
-    </PreferenceProvider>
+    </PreferenceFilterProvider>
   );
 }

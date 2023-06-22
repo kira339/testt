@@ -1,14 +1,15 @@
-// utils/PreferenceContext.js
 import React, { createContext, useState, useEffect } from "react";
 import { fetchPreferences } from "./API";
 
-export const PreferenceContext = createContext();
+export const PreferenceFilterContext = createContext();
 
-export const PreferenceProvider = ({ children }) => {
+export const PreferenceFilterProvider = ({ children }) => {
   const [accountNumber, setAccountNumber] = useState("");
   const [preferences, setPreferences] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const filters = { accountNumber };
 
   const updateAccountNumber = (newAccountNumber) => {
     setAccountNumber(newAccountNumber);
@@ -32,10 +33,10 @@ export const PreferenceProvider = ({ children }) => {
   }, [accountNumber]);
 
   return (
-    <PreferenceContext.Provider
-      value={{ preferences, isLoading, error, updateAccountNumber }}
+    <PreferenceFilterContext.Provider
+      value={{ preferences, isLoading, error, filters, updateAccountNumber }}
     >
       {children}
-    </PreferenceContext.Provider>
+    </PreferenceFilterContext.Provider>
   );
 };

@@ -46,11 +46,14 @@
 //   );
 // }
 import React, { useContext } from "react";
-import { PreferenceContext } from "../../utils/PreferenceContext";
+import { PreferenceFilterContext } from "../../utils/PreferenceFilterContext";
 import PerferenceItem from "../Item/PerferenceItem";
-
+import Plus from "../../assets/plus.png";
+import Minus from "../../assets/minus.png";
+import Gear from "../../assets/gear.png";
+import DashboardHeader from "./DashboardHeader";
 export default function PreferenceDashboard() {
-  const { preferences, isLoading, error } = useContext(PreferenceContext);
+  const { preferences, isLoading, error } = useContext(PreferenceFilterContext);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -63,23 +66,15 @@ export default function PreferenceDashboard() {
   return (
     <div className="dashboard-container">
       <div className="dashboard-header">
-        <div className="dashboard-header-icon">Gear</div>
-        <select className="dashboard-header-dropdown">
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
-        </select>
-        <div className="dashboard-header-icon">Plus</div>
-      </div>
-      <div className="dashboard-alert">This is an alert message.</div>
-      <h2 className="dashboard-title">Preference</h2>
-      {preferences.map((item, index) => (
+        {/* {preferences.map((item, index) => (
         <PerferenceItem
           key={index}
           title={item.title}
           description={item.description}
         />
-      ))}
+      ))} */}
+        <DashboardHeader />
+      </div>
     </div>
   );
 }

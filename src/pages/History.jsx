@@ -35,8 +35,6 @@ export default function History() {
   return (
     <HistoryFilterProvider>
       <div className="history">
-        <Banner pageName="History" />
-
         <HistoryHeader onSearch={setFilters} />
         {data ? (
           <HistoryDashboard filters={filters} data={data} />
