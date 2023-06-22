@@ -1,8 +1,15 @@
-import { createContext } from "react";
+import React, { createContext, useState } from "react";
 
-export const EnrollmentFilterContext = createContext({
-  filters: {
+export const EnrollmentFilterContext = createContext();
+
+export const EnrollmentFilterProvider = ({ children }) => {
+  const [filters, setFilters] = useState({
     search: "",
-  },
-  setFilters: () => {},
-});
+  });
+
+  return (
+    <EnrollmentFilterContext.Provider value={{ filters, setFilters }}>
+      {children}
+    </EnrollmentFilterContext.Provider>
+  );
+};

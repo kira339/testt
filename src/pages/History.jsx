@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import HistoryHeader from "../components/Header/HistoryHeader";
 import HistoryDashboard from "../components/Dashboard/HistoryDashboard";
 import { fetchHistory } from "../utils/API";
-
+import { HistoryFilterProvider } from "../utils/HistoryFilterContext";
+import Banner from "../components/Banner/Banner";
 export default function History() {
   const [filters, setFilters] = useState({});
   const [data, setData] = useState(null);
@@ -32,13 +33,17 @@ export default function History() {
   }
 
   return (
-    <div className="history">
-      <HistoryHeader onSearch={setFilters} />
-      {data ? (
-        <HistoryDashboard filters={filters} data={data} />
-      ) : (
-        <div>No data available</div>
-      )}
-    </div>
+    <HistoryFilterProvider>
+      <div className="history">
+        <Banner pageName="History" />
+
+        <HistoryHeader onSearch={setFilters} />
+        {data ? (
+          <HistoryDashboard filters={filters} data={data} />
+        ) : (
+          <div>No data available</div>
+        )}
+      </div>
+    </HistoryFilterProvider>
   );
 }

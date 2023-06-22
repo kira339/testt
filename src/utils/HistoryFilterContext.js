@@ -2,15 +2,6 @@ import React from "react";
 import { createContext, useContext, useState } from "react";
 export const HistoryFilterContext = createContext();
 export const useHistoryContext = () => useContext(HistoryFilterContext);
-// export const HistoryFilterProvider = createContext({
-//   filters: {
-//     category: "All categories",
-//     search: "",
-//     date: new Date(),
-//     recordCount: 0,
-//   },
-//   setFilters: () => {},
-// });
 
 export const HistoryFilterProvider = ({ children }) => {
   const [filters, setFilters] = useState({
@@ -18,14 +9,8 @@ export const HistoryFilterProvider = ({ children }) => {
     search: "",
     date: new Date(),
     recordCount: 0,
-
-    // setFilters: () => {},
   });
 
-  // const updateFilter = (filter) => {
-  //   // console.log(emailInput);
-  //   setFilters({ filter });
-  // };
   function updateFilter(newFilters) {
     setFilters((prevFilters) => ({ ...prevFilters, ...newFilters }));
   }
@@ -36,10 +21,3 @@ export const HistoryFilterProvider = ({ children }) => {
     </HistoryFilterContext.Provider>
   );
 };
-//   return (
-//     <HistoryFilterContext.Provider
-//       value={{ currentUser: currentUser }}
-//       {...props}
-//     />
-//   );
-// };

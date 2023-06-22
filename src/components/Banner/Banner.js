@@ -1,9 +1,17 @@
 import React, { useContext } from "react";
-//IMPORT EnrollmentFilterContext from util
 import { EnrollmentFilterContext } from "../../utils/EnrollmentFilterContext";
+import { HistoryFilterContext } from "../../utils/HistoryFilterContext";
 
 function Banner({ pageName }) {
-  const { filters } = useContext(EnrollmentFilterContext);
+  const enrollmentFilters = useContext(EnrollmentFilterContext);
+  const historyFilters = useContext(HistoryFilterContext);
+
+  let filters;
+  if (pageName === "Enrollment") {
+    filters = enrollmentFilters;
+  } else if (pageName === "History") {
+    filters = historyFilters;
+  }
 
   return (
     <div className="header-container bg-orange-500">

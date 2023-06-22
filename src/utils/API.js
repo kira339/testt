@@ -15,9 +15,9 @@ export function fetchHistory(filters) {
   }
 }
 
-export function fetchEnrollment(filters) {
+export function fetchEnrollment(search) {
   if (ENABLE_FETCHING) {
-    return axios.get("/api/enrollment", { params: filters });
+    return axios.get("/api/enrollment", { params: search });
   } else {
     return Promise.resolve({
       data: {
