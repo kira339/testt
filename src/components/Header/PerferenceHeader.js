@@ -1,32 +1,8 @@
-// import React, { useContext } from "react";
-// import Banner from "../Banner/Banner";
-
-// function PerferenceHeader() {
-
-//   return (
-//     <div className="header-container" onSubmit>
-//       <Banner pageName="Perference" />
-//       <form className="form-container">
-//         <div className="search-container">
-//           {/* Search input */}
-//           <input
-//             type="search"
-//             id="search-input"
-//             className="input" // Add the new class here
-//           />
-//         </div>
-//         <button type="submit" className="button">
-//           Search
-//         </button>
-//       </form>
-//     </div>
-//   );
-// }
-
-// export default PerferenceHeader;
 import React, { useState } from "react";
 import Banner from "../Banner/Banner";
-
+import Plus from "../../assets/plus.png";
+import Minus from "../../assets/minus.png";
+import Gear from "../../assets/gear.png";
 function PerferenceHeader({}) {
   const [accountNumber, setAccountNumber] = useState("");
 
@@ -52,6 +28,16 @@ function PerferenceHeader({}) {
           Search
         </button>
       </form>
+      <div className="dashboard-header">
+        <img src={Gear} />
+        {/* Replace with actual gear icon */}
+        <select>
+          <option>Option 1</option> {/* Replace with actual options */}
+          <option>Option 2</option>
+        </select>
+        <img src={Plus} />
+        {/* Replace with actual plus icon */}
+      </div>
     </div>
   );
 }

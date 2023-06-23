@@ -4,7 +4,7 @@ export const PerferenceData = [
     subHeader: "Outage",
     Description:
       "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-    // toggle button on/off slider green and red
+    toggle: true, // This preference is 'on' by default
   },
   {
     title: "Billing and Payment",
@@ -13,13 +13,13 @@ export const PerferenceData = [
     subheader2: "Payment Confirmation",
     Description:
       "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-    // toggle button on/off slider green and red
+    toggle: true, // This preference is 'on' by default
   },
   {
     title: "Marketing",
     subHeader: "Product and Services",
     Description:
       "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-    // toggle button on/off slider green and red
+    toggle: true, // This preference is 'on' by default
   },
 ];
