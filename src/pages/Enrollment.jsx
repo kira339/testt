@@ -11,13 +11,13 @@ function Enrollment() {
   const { filters, setFilters } = useContext(EnrollmentFilterContext);
 
   const handleSearch = () => {
-    fetchEnrollment({ accountNumber: searchInput }).then((response) => {
-      setFilteredData(response.data);
-    });
+    setFilters({ ...filters, search: searchInput });
   };
 
   useEffect(() => {
-    handleSearch();
+    fetchEnrollment(filters).then((response) => {
+      setFilteredData(response.data);
+    });
   }, [filters]);
 
   return (
