@@ -10,13 +10,13 @@ function EnrollmentDashboard({ data }) {
           <table className="table">
             <thead>
               <tr className="table-header">
-                <th className="table-header-cell">Account</th>
                 <th className="table-header-cell">Contact</th>
-                <th className="table-header-cell">Alert Type</th>
-                <th className="table-header-cell">Delivery Method</th>
-                <th className="table-header-cell">Date/Time</th>
-                <th className="table-header-cell">Delivery Status</th>
-                <th className="table-header-cell">Message</th>
+                <th className="table-header-cell">Principal</th>
+                <th className="table-header-cell">Source</th>
+                <th className="table-header-cell">Action</th>
+                <th className="table-header-cell">Channel</th>
+                <th className="table-header-cell">Program</th>
+                <th className="table-header-cell">Created</th>
               </tr>
             </thead>
             <tbody>

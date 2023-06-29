@@ -1,38 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+
 import EnrollmentHeader from "../components/Header/EnrollmentHeader";
 import EnrollmentDashboard from "../components/Dashboard/EnrollmentDashboard";
-import { EnrollmentData } from "../DB/EnrollmentData";
-import { EnrollmentFilterProvider } from "../utils/EnrollmentFilterContext";
+import { EnrollmentFilterContext } from "../utils/EnrollmentFilterContext";
 import { fetchEnrollment } from "../utils/API";
 
 function Enrollment() {
   const [searchInput, setSearchInput] = useState("");
-  const [filteredData, setFilteredData] = useState(EnrollmentData);
+  const [filteredData, setFilteredData] = useState([]);
+  const { filters, setFilters } = useContext(EnrollmentFilterContext);
 
   const handleSearch = () => {
-    const filtered = EnrollmentData.filter((row) =>
-      Object.values(row).some((val) => val.toString().includes(searchInput))
-    );
-    setFilteredData(filtered);
+    fetchEnrollment({ accountNumber: searchInput }).then((response) => {
+      setFilteredData(response.data);
+    });
   };
 
   useEffect(() => {
-    fetchEnrollment(searchInput).then((response) => {
-      console.log(response.data);
-    });
-  }, [searchInput]);
+    handleSearch();
+  }, [filters]);
 
   return (
-    <EnrollmentFilterProvider>
-      <div className="enrollment">
-        <EnrollmentHeader
-          searchInput={searchInput}
-          setSearchInput={setSearchInput}
-          handleSearch={handleSearch}
-        />
-        <EnrollmentDashboard data={filteredData} />
-      </div>
-    </EnrollmentFilterProvider>
+    <div className="enrollment">
+      <EnrollmentHeader
+        searchInput={searchInput}
+        setSearchInput={setSearchInput}
+        handleSearch={handleSearch}
+      />
+      <EnrollmentDashboard data={filteredData} />
+    </div>
   );
 }
 

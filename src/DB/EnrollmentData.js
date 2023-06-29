@@ -1,16 +1,17 @@
 // src/DB/EnrollmentData.js
 export const EnrollmentData = [
   {
-    column1: "Data 1",
-    column2: "Data 2",
-    column3: "Data 3",
-    column4: "Data 4",
-    column5: "Data 5",
-    column6: "Data 6",
-    column7: "Data 7",
+    contact: "John Doe",
+    principal: "Principal 1",
+    source: "Source 1",
+    action: "Action 1",
+    channel: "Channel 1",
+    program: "Program 1",
+    created: "2023-06-12T00:00:00Z",
   },
+
   {
-    column1: "Data 8",
+    Accoun: "Data 8",
     column2: "Data 9",
     column3: "Data 10",
     column4: "Data 11",

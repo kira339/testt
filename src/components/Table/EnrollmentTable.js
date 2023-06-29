@@ -1,15 +1,23 @@
 import React from "react";
 
-function EnrollmentTable(props) {
+function EnrollmentTable({
+  contact,
+  principal,
+  source,
+  action,
+  channel,
+  program,
+  created,
+}) {
   return (
     <tr className="table-row">
-      <td className="table-cell">{props.column1}</td>
-      <td className="table-cell">{props.column2}</td>
-      <td className="table-cell">{props.column3}</td>
-      <td className="table-cell">{props.column4}</td>
-      <td className="table-cell">{props.column5}</td>
-      <td className="table-cell">{props.column6}</td>
-      <td className="table-cell">{props.column7}</td>
+      <td className="table-cell">{contact}</td>
+      <td className="table-cell">{principal}</td>
+      <td className="table-cell">{source}</td>
+      <td className="table-cell">{action}</td>
+      <td className="table-cell">{channel}</td>
+      <td className="table-cell">{program}</td>
+      <td className="table-cell">{created}</td>
     </tr>
   );
 }
