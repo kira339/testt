@@ -15,7 +15,6 @@ function EnrollmentHeader({ searchInput, setSearchInput, handleSearch }) {
             type="search"
             id="search-input"
             className="input"
-            placeholder={`Search ${filters.category}`}
             required
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
