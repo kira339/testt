@@ -26,7 +26,6 @@ export function fetchHistory(filters) {
 //     });
 //   }
 // }
-import axios from "axios";
 
 export async function fetchEnrollments(accountNumber) {
   try {

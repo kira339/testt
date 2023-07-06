@@ -3,7 +3,7 @@ import React, { useState, useEffect, useContext } from "react";
 import EnrollmentHeader from "../components/Header/EnrollmentHeader";
 import EnrollmentDashboard from "../components/Dashboard/EnrollmentDashboard";
 import { EnrollmentFilterContext } from "../utils/EnrollmentFilterContext";
-import { fetchEnrollment } from "../utils/API";
+import { fetchEnrollments } from "../utils/API";
 
 function Enrollment() {
   const [searchInput, setSearchInput] = useState("");
@@ -15,7 +15,7 @@ function Enrollment() {
   };
 
   useEffect(() => {
-    fetchEnrollment(filters).then((response) => {
+    fetchEnrollments(filters).then((response) => {
       setFilteredData(response.data);
     });
   }, [filters]);
