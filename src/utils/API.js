@@ -26,25 +26,42 @@ export function fetchHistory(filters) {
 //     });
 //   }
 // }
+let config = {
+  method: "post",
+  maxBodyLength: Infinity,
+  url: "http://localhost:8080/api/enrollment",
+  headers: {
+    "content-type": "text/plain",
+  },
+  data: data,
+};
+axios
+  .request(config)
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
 
-export async function fetchEnrollments(accountNumber) {
-  try {
-    const response = await axios.get("http://your-api-url", {
-      params: {
-        accountNumber: accountNumber,
-      },
-    });
+// export async function fetchEnrollments(accountNumber) {
+//   try {
+//     const response = await axios.get("http://your-api-url", {
+//       params: {
+//         accountNumber: accountNumber,
+//       },
+//     });
 
-    if (response.status !== 200) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
+//     if (response.status !== 200) {
+//       throw new Error(`HTTP error! status: ${response.status}`);
+//     }
 
-    return response.data;
-  } catch (error) {
-    console.error("There was an error fetching the enrollments", error);
-    return [];
-  }
-}
+//     return response.data;
+//   } catch (error) {
+//     console.error("There was an error fetching the enrollments", error);
+//     return [];
+//   }
+// }
 
 export function fetchReports(filters) {
   if (ENABLE_FETCHING) {

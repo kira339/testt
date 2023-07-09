@@ -1,10 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import Banner from "../Banner/Banner";
-import { EnrollmentFilterContext } from "../../utils/EnrollmentFilterContext";
 
 function EnrollmentHeader({ searchInput, setSearchInput, handleSearch }) {
-  const { filters, setFilters } = useContext(EnrollmentFilterContext);
-
   return (
     <div className="enrollment-header">
       <Banner pageName="Enrollment" />
